@@ -15,18 +15,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Docker Login
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-
-    - name: Build the Docker image
-      run: docker build .  --tag targaryen1199/go_image232:$(date +%s)
-
-    - name: Docker Push 
-      run: docker login ${{secrets.DOCKER_USER}}/targaryen1199/go_image232:latest
-    - name: Push docker image
-      run : docker push targaryen1199/go_image232:latest
+    - name: Scripts
+      run: | 
+        
+        docker build . --tag targaryen1199/go_image232:$(date +%s)
+        docker login ${{secrets.DOCKER_USER}}/targaryen1199/go_image232:latest
+        docker push targaryen1199/go_image232:latest
+        
+        
 
