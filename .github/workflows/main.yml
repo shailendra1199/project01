@@ -20,7 +20,7 @@ jobs:
         docker build -t app .
         docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
         docker tag app targaryen1199/go_image232:$(date +%s)
-        docker push targaryen1199/go_image232:
+        docker push targaryen1199/go_image232:latest
         
         
 
