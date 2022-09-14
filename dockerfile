@@ -1,4 +1,4 @@
 FROM nginx:latest
-WORKDIR test
+WORKDIR test01
 EXPOSE 80
 
