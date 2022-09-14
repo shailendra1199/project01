@@ -19,7 +19,7 @@ jobs:
       run: | 
         
         docker build . --tag targaryen1199/go_image232:$(date +%s)
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
         docker push targaryen1199/go_image232:latest
         
         
