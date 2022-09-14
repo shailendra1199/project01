@@ -1,4 +1,4 @@
-FROM ubuntu:alpine
+FROM nginx:1.23.1
 WORKDIR test
 EXPOSE 80
 
