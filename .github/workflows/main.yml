@@ -23,8 +23,10 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
     - name: Build the Docker image
-      run: docker build .  --tag my-image-name:$(date +%s)
+      run: docker build .  --tag targaryen1199/go_image232:$(date +%s)
 
     - name: Docker Push 
-      run: docker push ${{secrets.DOCKER_USER}}/targaryen1199/go_image232:latest
+      run: docker login ${{secrets.DOCKER_USER}}/targaryen1199/go_image232:latest
+    - name: Push docker image
+      run : docker push targaryen1199/go_image232:latest
 
